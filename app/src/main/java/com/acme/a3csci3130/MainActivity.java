@@ -1,3 +1,8 @@
+/* A simple CRUD interface that permits creating, reading, updating and deleting information for businesses.
+ * Data is stored on firebase, which uses validation rules to ensure data is being created using the correct format.
+ * @author Sean Mahoney B00752957
+ */
+
 package com.acme.a3csci3130;
 
 import android.app.Activity;
@@ -51,20 +56,22 @@ public class MainActivity extends Activity {
             }
         });
     }
-
+    /*
+     *@param v
+     */
     public void createContactButton(View v)
     {
         Intent intent=new Intent(this, CreateContactAcitivity.class);
         startActivity(intent);
     }
-
+    /* show a person's information
+     *@param person (A Contact object)
+     */
     private void showDetailView(Contact person)
     {
         Intent intent = new Intent(this, DetailViewActivity.class);
         intent.putExtra("Contact", person);
         startActivity(intent);
     }
-
-
 
 }
